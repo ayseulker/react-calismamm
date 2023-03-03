@@ -24,11 +24,10 @@ class Card extends React.Component {
 			<div className="card w-100"> 
 				<img src={this.props.image} className="card-img-top" alt="..." />
 				<div className="card-body">
-					<h5 className="card-title">{this.componentDidCatchprops.cardTitle}</h5> 
+					<h5 className="card-title">{this.props.cardTitle}</h5> 
 					<p className="card-text">{this.props.cardText}</p>
 					<p className="card-text">
-						<small className="text-muted">{this.props.updatedTime} </small>
-					</p>
+						<small className="text-muted">{this.props.updatedTime} </small></p>
 				</div>
 			</div>
 		);
@@ -36,12 +35,12 @@ class Card extends React.Component {
 
 }
 
-Card.defaultProps ={
+Card.defaultProps = {
 	cardTitle: "Default Card Title"
 }
 
 Card.propTypes = {
-	cardText: propTypes.string.isRequired
+	cardText: "propTypes.string.isRequired"
 }
 
 export default Card;
@@ -77,4 +76,15 @@ class Welcome extends React.Component {
 
 // isRequired = zorunlu olduğunu ifade ediyoruz
 
+/* 
+Card.defaultProps = {
+	cardTitle: "Default Card Title"
+}
 
+demek yerine 
+
+class Card extends React.Component { altına
+	static defaultProps = {
+		cardTitle: "Default Card Title"
+	}   şeklinde de aynı sonucu alabiliriz
+	*/
